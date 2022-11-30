@@ -6,9 +6,9 @@ function HomePage() {
   return (
     <MainLayout>
         <div className='bg-light p-5 mt-4 rounded-3'>
-            <h1>Welcome to POS for Agricultural products </h1>
-            <p>Labore tempor ipsum duis ea exercitation laboris laborum mollit qui exercitation.</p>
-            <p>If you have an issue, call 443-444-xxxx anytimes</p>
+            <h1>Welcome to Bells University Farm Store </h1>
+            <p>Bells university Farm store</p>
+            <p>If you have an issue, call 234-8180735263 anytimes</p>
             <Link to='/pos' className='btn btn-primary'>Click here to sell products</Link>
         </div>
   </MainLayout>

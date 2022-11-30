@@ -1,9 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react'
 import MainLayout from '../layouts/MainLayout'
-import axios from "axios"
+// import axios from "axios"
 import { toast } from 'react-toastify';
 import { ComponentToPrint } from '../components/ComponentToPrint';
 import { useReactToPrint } from 'react-to-print';
+import { getProducts } from '../service/product';
 
 function POSPage() {
 
@@ -19,8 +20,8 @@ function POSPage() {
 
   const fetchProducts = async() => {
     setIsLoading(true);
-    const result = await axios.get('products');
-    setProducts(await result.data);
+    const res = await getProducts()
+    setProducts(res);
     setIsLoading(false);
   }
 
@@ -100,7 +101,7 @@ function POSPage() {
                 <div key={key} className='col-lg-4 mb-4'>
                   <div className='pos-item px-3 text-center border' onClick={() => addProductToCart(product)}>
                       <p>{product.name}</p>
-                      <img src={product.image} className="img-fluid" alt={product.name} />
+                      <img src={product.imageUrl} className="img-fluid" alt={product.name} />
                       <p>${product.price}</p>
                   </div>
 
